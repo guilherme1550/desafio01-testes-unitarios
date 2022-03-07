@@ -33,7 +33,7 @@ describe("Authenticate User", () => {
         ));
     })
 
-    it("Should not be able to authenticate with incorret email", async () => {
+    it("Should not be able to authenticate with incorrect email", async () => {
         expect( async () => {
             const email = "guilherme@email.com.br";
             const password = "12344321";
@@ -56,4 +56,5 @@ describe("Authenticate User", () => {
             await authenticateUserUseCase.execute({ email: "guilherme@email.com.br", password: "1234" });
         }).rejects.toBeInstanceOf(IncorrectEmailOrPasswordError);
     });
+
 });
